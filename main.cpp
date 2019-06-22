@@ -20,7 +20,7 @@ int main(int argc, char* argv[]) {
         }
         std::cout << quebraLinha << mensagemDecodificada; //Imprime mensagem decodificada.
     }
-    if(strcmp(argv[1], "-a") == 0) { //Verifica se argumento de impresão da árvore foi passado.
+    if(argv[1]!=nullptr && strcmp(argv[1], "-a") == 0) { //Verifica se argumento de impresão da árvore foi passado.
         arvore->imprimeArvorePreOrdem(); //Imprime arvore conforme Pre Ordem
     }
     return 0;
