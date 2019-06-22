@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 #include <string.h>
 #include "Arvore.h"
 
@@ -8,9 +9,16 @@ int main(int argc, char* argv[]) {
     Arvore* arvore = new Arvore("morse.txt"); //Cria arvore, passando o path do arquivo a ser lido.
 
     std::string mensagem;
+    bool flagEndLine = false;
+    std::string quebraLinha;
     while(getline(std::cin, mensagem)) { //Realiza a leitura das mensagens, enquanto ainda restar alguma.
         std::string mensagemDecodificada = decodificaMensagem(arvore, mensagem); //Decodifica mensagem.
-        std::cout << mensagemDecodificada << std::endl;//Imprime mensagem decodificada.
+        if(flagEndLine) {
+            quebraLinha = "\n"; //Imprime endl para formatação do resultado.
+        } else {
+            flagEndLine = true;
+        }
+        std::cout << quebraLinha << mensagemDecodificada; //Imprime mensagem decodificada.
     }
     if(strcmp(argv[1], "-a") == 0) { //Verifica se argumento de impresão da árvore foi passado.
         arvore->imprimeArvorePreOrdem(); //Imprime arvore conforme Pre Ordem
