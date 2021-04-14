@@ -15,5 +15,5 @@ make
 Then run morse-code-translator file, passing a test case file as an inline parameter, for example:
 
 ```bash
-./morse-code-translator \< ./tests/5.in
+./morse-code-translator < ./tests/5.in
 ```
