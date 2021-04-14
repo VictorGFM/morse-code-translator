@@ -23,6 +23,7 @@ int main(int argc, char* argv[]) {
     if(argv[1]!=nullptr && strcmp(argv[1], "-a") == 0) { //Verifica se argumento de impresão da árvore foi passado.
         arvore->imprimeArvorePreOrdem(); //Imprime arvore conforme Pre Ordem
     }
+    std::cout << std::endl;
     return 0;
 }
 
